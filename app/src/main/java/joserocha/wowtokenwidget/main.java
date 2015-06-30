@@ -36,12 +36,9 @@ public class main extends AppWidgetProvider {
 
         StrictMode.setThreadPolicy(policy);
 
-        Log.d("algo", "no pinche entra3");
-
         for(int i=0;i<appWidgetIds.length;i++){
             int appWidgetId = appWidgetIds[i];
 
-            //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://wowtoken.info"));
             Intent intent = new Intent(context, main.class);
 
             PendingIntent pending = PendingIntent.getActivity(context, 0, intent, 0);
@@ -66,7 +63,7 @@ public class main extends AppWidgetProvider {
                 jsonstr = buffer.toString();
             }
             catch (Exception ex){
-                Log.d("algo", "InputStream Exc");
+                Log.d("Exception", "InputStream Exception");
             }
             finally {
                 if (reader != null)
@@ -89,7 +86,7 @@ public class main extends AppWidgetProvider {
 
            }
            catch (Exception ex){
-                Log.d("algo", "Excepcion de json token");
+                Log.d("Exception", "Excepcion de json token");
             }
 
             if(savedGold.isEmpty()){
